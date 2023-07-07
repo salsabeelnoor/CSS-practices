@@ -22,7 +22,7 @@
 
     <!-- page-2 -->
     <section id="page-2" class="page">
-        <h1>Welcome to My Presentation</h1>
+        <h1>Page - 2</h1>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum amet porro 
             reiciendis aperiam eveniet repellat, possimus cumque facilis ipsum nobis quod tempora consequuntur impedit 
             blanditiis unde animi magni eaque 
@@ -34,7 +34,7 @@
     </section>
     <!-- page-3 -->
     <section id="page-3" class="page">
-        <h1>Welcome to My Presentation</h1>
+        <h1>Page - 3</h1>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum amet porro 
             reiciendis aperiam eveniet repellat, possimus cumque facilis ipsum nobis quod tempora consequuntur impedit 
             blanditiis unde animi magni eaque 
@@ -46,7 +46,7 @@
     </section>
     <!-- page-4 -->
     <section id="page-4" class="page">
-        <h1>Welcome to My Presentation</h1>
+        <h1>Page - 4</h1>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum amet porro 
             reiciendis aperiam eveniet repellat, possimus cumque facilis ipsum nobis quod tempora consequuntur impedit 
             blanditiis unde animi magni eaque 
@@ -55,5 +55,22 @@
                 <a href="#page-3" class="btn">Next Page <i class="fas fa-arrow-circle-up"></i> </a>
             </div>
     </section>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" 
+    crossorigin="anonymous"></script>
+    <script>
+        // Smooth Scrolling
+        $('.btn').on('click', function(event) {
+            if (this.hash !== '') {
+              event.preventDefault();
+              const hash = this.hash;
+              $('html, body').animate(
+                {
+                  scrollTop: $(hash).offset().top
+                },
+                800
+              );
+            }
+          });
+      </script>
 </body>
 </html>
