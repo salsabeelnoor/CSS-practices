@@ -1,83 +1,29 @@
-:root{
-    --page-1-color: steelblue;
-    --page-2-color: tan;
-    --page-3-color: teal;
-    --page-4-color: slateblue;
-    --animate-speed: 2s
+@import url("https://fonts.googleapis.com/css?family=Unica+One|Vollkorn");
+:root {
+  --ff-ss: "Unica One";
+  --ff-s: "Vollkorn";
+
+  --clr-red: #c31;
+  --clr-black: rgba(black, 1);
+  --clr-gray: rgba(black, 0.7);
 }
-body, html{
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.4;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+body {
+  font-size: 1rem;
+  text-align: center;
+  font-family: var(--ff-s);
+  line-height: 1.4;
+  color: var(--clr-gray);
 }
-/* Page colors */
-#page-1{
-    background: var(--page-1-color);
+a {
+  color: var(--clr-red);
 }
-#page-2{
-    background: var(--page-2-color);
+a[data-tool-tip] {
+  position: relative;
 }
-#page-3{
-    background: var(--page-3-color);
-}
-#page-4{
-    background: var(--page-4-color);
-}
-.page{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 4rem;
-}
-.page h1{
-    font-size: 4rem;
-    line-height: 1.2;
-    margin: 1rem;
-}
-.page p{
-    font-size: 1.3rem;
-}
-.btn{
-    display: inline-block;
-    padding: 1rem 2rem;
-    background: #f4f4f4;
-    color: #333;
-    text-decoration: none;
-    border: none;
-    margin-top: 1rem;
-    font-size: 1.1rem;
-    transition: all 0.3s ease-in;
-}
-.btn:hover, .btn-dark{
-    background: #333;
-    color: #fff;
-}
-.btn-dark:hover{
-    background: #f4f4f4;
-    color: #333;
-}
-/* Page animation */
-#page-1 h1{
-    transform: translateY(-1200px);
-    animation: heading var(--animate-speed) forwards ease-in;
-}
-#page-1 p{
-    transform: translateX(-1800px);
-    animation: heading var(--animate-speed) forwards ease-in 1s;
-}
-@keyframes heading{
-    to{
-        transform: translateY(0);
-    }
-}
-@keyframes p{
-    to{
-        transform: translateYX(0);
-    }
+a[data-tool-tip]::before {
+  content: "";
+  background: red;
+  display: block;
+  width: 10px;
+  height: 10px;
 }
