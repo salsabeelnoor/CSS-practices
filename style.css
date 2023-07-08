@@ -1,83 +1,151 @@
-:root{
-    --page-1-color: steelblue;
-    --page-2-color: tan;
-    --page-3-color: teal;
-    --page-4-color: slateblue;
-    --animate-speed: 2s
+:root {
+    --clr-primary-400: 263 55% 52%;
+    --clr-secondary-400: 217 19% 35%;
+    --clr-secondary-500: 219 29% 14%;
+    --clr-neutral-100: 0 0% 100%;
+    --clr-neutral-200: 210 46% 95%;
+    --clr-neutral-300: 0 0% 81%;
+  
+    --ff-primary: "Barlow Semi Condensed", sans-serif;
+  
+    --fw-400: 500;
+    --fw-700: 600;
+  
+    --fs-300: 0.6875rem;
+    --fs-400: 0.8125rem;
+    --fs-500: 1.25rem;
 }
-body, html{
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.4;
-    color: #fff;
+*{
+    box-sizing: border-box;
     margin: 0;
-    padding: 0;
-    overflow: hidden;
 }
-/* Page colors */
-#page-1{
-    background: var(--page-1-color);
+body{
+    min-height: 100vh;
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-400);
+
+    background-color: hsl(var(--clr-neutral-200));
 }
-#page-2{
-    background: var(--page-2-color);
+.bg-primary-400 {
+    background: hsl(var(--clr-primary-400));
+  }
+  .bg-secondary-400 {
+    background: hsl(var(--clr-secondary-400));
+  }
+  .bg-secondary-500 {
+    background: hsl(var(--clr-secondary-500));
+  }
+  
+  .bg-neutral-100 {
+    background: hsl(var(--clr-neutral-100));
+  }
+  
+  .text-neutral-100 {
+    color: hsl(var(--clr-neutral-100));
+  }
+  .text-secondary-400 {
+    color: hsl(var(--clr-secondary-400));
+  }
+  .border-primary-400 {
+    border: 2px solid #a775f1;
+  }
+.grid-container{
+    display: grid;
+    gap: 1.5rem;
+    grid-auto-columns: 1fr;
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-template-areas: 
+    'one'
+    'two'
+    'three'
+    'four'
+    'five';
+    padding-block: 2rem;
+  width: min(95%, 70rem);
+  margin-inline: auto; 
+  /* giving margin to left and write */
+    
 }
-#page-3{
-    background: var(--page-3-color);
+
+.grid{
+    font-size: var(--fs-400);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(var(--clr-secondary-400) / 0.25);
 }
-#page-4{
-    background: var(--page-4-color);
+.grid:nth-child(1) {
+    grid-area: one;
+  }
+  .grid:nth-child(2) {
+    grid-area: two;
+  }
+  .grid:nth-child(3) {
+    grid-area: three;
+  }
+  .grid:nth-child(4) {
+    grid-area: four;
+  }
+  .grid:nth-child(5) {
+    grid-area: five;
+  }
+  @media screen and (min-width: 576px){
+    .grid-container{
+        grid-template-areas: 
+        'one one'
+        'two three'
+        'five five'
+        'four four';
+    }
 }
-.page{
+  @media screen and (min-width: 768px){
+    .grid-container{
+        grid-template-areas: 
+        'one one'
+        'two five'
+        'three five'
+        'four four';
+    }
+}
+  @media screen and (min-width: 992px){
+    .grid-container{
+        grid-template-areas: 
+        'one one two'
+        'five five five'
+        'three four four';
+    }
+}
+  @media screen and (min-width: 1200px){
+    .grid-container{
+        grid-template-areas: 
+        'one one two five'
+        'three four four five';
+    }
+}
+.intro-section{
     display: flex;
-    flex-direction: column;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 4rem;
+
 }
-.page h1{
-    font-size: 4rem;
+.intro-section img{
+    width: 2.75rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+.intro-inner{
+    padding-left: .75rem ;
+    margin-top: .25rem;
+}
+/* The difference between :first-of-type and 
+:first-child is that :first-of-type only 
+matches the first occurrence of a particular 
+element type, while :first-child 
+matches the first child of any element type. */
+.grid > p:first-of-type{
+    font-size: var(--fs-500);
     line-height: 1.2;
-    margin: 1rem;
 }
-.page p{
-    font-size: 1.3rem;
-}
-.btn{
-    display: inline-block;
-    padding: 1rem 2rem;
-    background: #f4f4f4;
-    color: #333;
-    text-decoration: none;
-    border: none;
-    margin-top: 1rem;
-    font-size: 1.1rem;
-    transition: all 0.3s ease-in;
-}
-.btn:hover, .btn-dark{
-    background: #333;
-    color: #fff;
-}
-.btn-dark:hover{
-    background: #f4f4f4;
-    color: #333;
-}
-/* Page animation */
-#page-1 h1{
-    transform: translateY(-1200px);
-    animation: heading var(--animate-speed) forwards ease-in;
-}
-#page-1 p{
-    transform: translateX(-1800px);
-    animation: heading var(--animate-speed) forwards ease-in 1s;
-}
-@keyframes heading{
-    to{
-        transform: translateY(0);
-    }
-}
-@keyframes p{
-    to{
-        transform: translateYX(0);
-    }
+/* :not(:first-child) pseudo-class is used to 
+select all elements except the first child 
+of their parent. */
+.grid > *:where(:not(:first-child)){
+    margin-top: var(--text-space, 1em);
 }
