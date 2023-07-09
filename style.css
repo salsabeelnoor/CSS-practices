@@ -5,7 +5,7 @@
 
   --clr-red: #c31;
   --clr-black: rgba(black, 1);
-  --clr-gray: rgba(black, 0.7);
+  --clr-gray: rgb(13, 11, 11, 0.7);
 }
 body {
   font-size: 1rem;
@@ -13,6 +13,7 @@ body {
   font-family: var(--ff-s);
   line-height: 1.4;
   color: var(--clr-gray);
+  margin: 0;
 }
 a {
   color: var(--clr-red);
@@ -21,9 +22,61 @@ a[data-tool-tip] {
   position: relative;
 }
 a[data-tool-tip]::before {
-  content: "";
-  background: red;
+  content: attr(data-tool-tip);
+  background-color: var(--clr-gray);
+  color: white;
   display: block;
-  width: 10px;
-  height: 10px;
+  border-radius: 5px;
+  position: absolute;
+  padding: 0.5em 2em;
+  bottom: 0;
+  left: 0;
+  transform: scale(0);
+  transition: transform ease-out 150ms, bottom ease-out 150ms;
+}
+a[data-tool-tip]:hover::before {
+  transform: scale(1);
+  bottom: 100%;
+}
+.counters {
+  background-color: lightblue;
+  padding: 5em 7em;
+  text-align: left;
+  margin-top: 3em;
+  /* Giving counter a name. Everytime it gets to 
+  a class of counter it will reset itself. If we have
+  five divs that have lists in it, everytime the 
+  counter reset when it encounters a new div with 
+  this counter class */
+  /* can choose any name  */
+  counter-reset: section-counter;
+}
+.section {
+  position: relative;
+  counter-increment: section-counter;
+}
+.section::before {
+  content: counter(section-counter);
+  position: absolute;
+  left: -2em;
+  top: -0.2em;
+  background: rgb(168, 182, 194);
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid rgb(189, 135, 216);
+  box-sizing: border-box;
+}
+.counters ol {
+  counter-reset: list-counter;
+  list-style: none;
+}
+.counters li::before {
+  counter-increment: list-counter;
+  content: "list-item" counter(list-counter) ")";
+  font-size: 0.9em;
+  color: rgb(115, 122, 14);
 }
