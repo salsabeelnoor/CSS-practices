@@ -1,182 +1,29 @@
-@import url("https://fonts.googleapis.com/css?family=Unica+One|Vollkorn");
-:root {
-  --ff-ss: "Unica One";
-  --ff-s: "Vollkorn";
-
-  --clr-red: #c31;
-  --clr-black: rgba(black, 1);
-  --clr-gray: rgb(13, 11, 11, 0.7);
-  --clr-orange: 7 100% 63%;
-  --clr-blue: 239 100% 50%;
-
-  --spacer: 2rem;
-}
-body {
-  font-size: 1rem;
-  text-align: center;
-  font-family: var(--ff-s);
-  line-height: 1.4;
-  color: var(--clr-gray);
+* {
   margin: 0;
-}
-a {
-  color: var(--clr-red);
-}
-a[data-tool-tip] {
-  position: relative;
-}
-a[data-tool-tip]::before {
-  content: attr(data-tool-tip);
-  background-color: var(--clr-gray);
-  color: white;
-  display: block;
-  border-radius: 5px;
-  position: absolute;
-  padding: 0.5em 2em;
-  bottom: 0;
-  left: 0;
-  transform: scale(0);
-  transition: transform ease-out 150ms, bottom ease-out 150ms;
-}
-a[data-tool-tip]:hover::before {
-  transform: scale(1);
-  bottom: 100%;
-}
-.counters {
-  background-color: lightblue;
-  padding: 5em 7em;
-  text-align: left;
-  margin-top: 3em;
-  /* Giving counter a name. Everytime it gets to 
-  a class of counter it will reset itself. If we have
-  five divs that have lists in it, everytime the 
-  counter reset when it encounters a new div with 
-  this counter class */
-  /* can choose any name  */
-  counter-reset: section-counter;
-}
-.section {
-  position: relative;
-  counter-increment: section-counter;
-}
-.section::before {
-  content: counter(section-counter);
-  position: absolute;
-  left: -2em;
-  top: -0.2em;
-  background: rgb(168, 182, 194);
-  width: 1.6em;
-  height: 1.6em;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 3px solid rgb(189, 135, 216);
+  padding: 0;
   box-sizing: border-box;
 }
-.counters ol {
-  counter-reset: list-counter;
-  list-style: none;
+body {
+  font-family: sans-serif;
+  line-height: 1.4;
 }
-.counters li::before {
-  counter-increment: list-counter;
-  content: "list-item" counter(list-counter) ")";
-  font-size: 0.9em;
-  color: rgb(115, 122, 14);
+.product-container {
+  width: 825px;
+  border: 3px solid black;
+  margin: 40px auto;
 }
-.cards {
-  padding: 5em 2em;
-  display: grid;
-  /* grid-auto-flow: column; */
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1em;
-  place-content: center;
-  background-color: rgb(118, 190, 241);
+h2 {
+  padding-block: 8px;
+  text-align: center;
+  text-transform: uppercase;
+  background: rgb(230, 227, 227);
+  font-size: 20px;
 }
-.card {
+.product-info-container {
   display: flex;
-  flex-direction: column;
-  text-align: left;
-  color: white;
-  border-radius: 5px;
-  padding: var(--spacer);
-}
-.card-title {
-  line-height: 1;
-}
-.color-setting {
-  background-image: url(https://images.unsplash.com/photo-1627503218607-0626b62bc1a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyOTgyOTg3Nw&ixlib=rb-1.2.1&q=80&w=400);
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-}
-.color-setting::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(0deg, rgb(0 0 0 / 0.7), rgb(0 0 0 / 0));
-}
-.card-containing-image {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-}
-.card-containing-image img {
-  position: absolute;
-  inset: 0;
-  z-index: -3;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-.card-containing-image::before,
-.card-containing-image::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-}
-.card-containing-image::before {
-  z-index: -1;
-  background: hsl(var(--clr-orange));
-  mix-blend-mode: multiply;
-}
-.card-containing-image::after {
-  z-index: -2;
-  background: hsl(var(--clr-blue));
-  mix-blend-mode: screen;
-}
-.gradient-shadow {
-  background: linear-gradient(
-    45deg,
-    hsl(var(--clr-orange)),
-    hsl(var(--clr-blue))
-  );
-  box-shadow: 0;
-  position: relative;
-  isolation: isolate;
-}
-.gradient-shadow::before,
-.gradient-shadow::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: inherit;
-}
-.gradient-shadow::before {
-  filter: blur(0.75em);
-}
-.gradient-shadow::after {
-  opacity: 0.5;
-  filter: blur(1em);
+  flex-basis: auto;
 }
 
-.test::before {
-  content: "This is before";
-  border: 2px solid red;
-}
-.test::after {
-  content: "This is after";
+.product-details {
   border: 2px solid green;
 }

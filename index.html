@@ -4,101 +4,224 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Playing with Before and after</title>
+    <title>Document</title>
+    <style>
+      body {
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        transition: all 0.7s ease;
+      }
+      .box-cont {
+        display: flex;
+        flex-direction: column;
+        border: 4px solid black;
+        position: relative;
+      }
+      h2 {
+        width: 100%;
+      }
+      .section-box {
+        display: flex;
+        gap: 10px;
+      }
+      .section-box::before {
+        content: "Sale";
+        width: 100px;
+        height: 50px;
+        background: red;
+        color: white;
+        text-align: center;
+        position: absolute;
+        /* line-height: 50px; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: -25px;
+        left: -30px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      /* .sale {
+        position: absolute;
+        top: -25px;
+        left: -30px;
+        width: 100px;
+        height: 50px;
+        background: red;
+        color: white;
+        vertical-align: middle;
+        text-align: center;
+        line-height: 50px;
+      } */
+      .box {
+        width: 300px;
+        padding: 10px;
+        /* border: 2px solid green; */
+      }
+      .product-price {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+      .colors {
+        display: flex;
+        gap: 10px;
+        margin-left: -11px;
+        /* border: 2px solid yellow; */
+      }
+      .blue {
+        width: 20px;
+        height: 20px;
+        background: blue;
+      }
+      .red {
+        width: 20px;
+        height: 20px;
+        background: red;
+      }
+      .yellow {
+        width: 20px;
+        height: 20px;
+        background: yellow;
+      }
+      .green {
+        width: 20px;
+        height: 20px;
+        background: green;
+      }
+      .brown {
+        width: 20px;
+        height: 20px;
+        background: brown;
+      }
+      button {
+        height: 50px;
+        background-color: #000;
+        color: #fff;
+        font-size: 25px;
+        cursor: pointer;
+        text-transform: capitalize;
+        transition: opacity 0.7s ease;
+      }
+      button:hover {
+        opacity: 0.8;
+      }
+    </style>
   </head>
   <body>
-    <h1>Playing with before and After</h1>
-    <section class="test-parent">
-      <h2 class="test">Testing before and after elements</h2>
-    </section>
-    <p>
-      Lorem ipsum
-      <a href="" data-tool-tip="Cool!"> dolor sit amet</a> consectetur
-      adipisicing elit. Officiis velit facilis laboriosam perspiciatis, quaerat
-      molestias doloremque sit vitae cum dicta. Quo impedit eos consequuntur
-      iure.
-    </p>
-    <div class="counters">
-      <h1>We can number sections!</h1>
-      <h2 class="section">Section title here</h2>
-      <p>
-        Pellentesque habitant morbi tristique senectus et netus et malesuada
-        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
-        egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
-        leo.
-      </p>
-      <h2 class="section">Section title here</h2>
-      <p>
-        Pellentesque habitant morbi tristique senectus et netus et malesuada
-        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
-        egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
-        leo.
-      </p>
-      <h2 class="section">Section title here</h2>
-      <p>
-        Pellentesque habitant morbi tristique senectus et netus et malesuada
-        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
-        egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
-        leo.
-      </p>
-      <h2 class="section">Section title here</h2>
-      <p>
-        Pellentesque habitant morbi tristique senectus et netus et malesuada
-        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
-        egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
-        leo.
-      </p>
-      <h2 class="section">Section title here</h2>
-      <p>
-        Pellentesque habitant morbi tristique senectus et netus et malesuada
-        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
-        egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
-        leo.
-      </p>
-      <ol>
-        <li>I'm a list item</li>
-        <li>me too!</li>
-        <li>me three</li>
-        <li>Hello there</li>
-      </ol>
-      <ol>
-        <li>I'm a list item</li>
-        <li>me too!</li>
-        <li>me three</li>
-        <li>Hello there</li>
-      </ol>
+    <div class="box-cont">
+      <h2>Converse Chuck Taylor all star Low Top</h2>
+      <!-- <div class="sale">Sale</div> -->
+      <div class="section-box">
+        <div class="box">
+          <img
+            class="shoe-image"
+            src="https://www.si.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_xy_center%2Cq_auto:good%2Cw_1200%2Cx_776%2Cy_755/MTk0Njk2MDgyNjkxNzI4NTQ2/ja-morant-shoe.jpg"
+            alt="shoe image"
+            height="250"
+            width="250"
+          />
+        </div>
+        <div class="box">
+          <div class="product-price">
+            <h3>$65.00</h3>
+            <p class="shipping-para">Free shipping</p>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+            incidunt repellendus facere repellat assumenda eum mollitia culpa at
+            maiores numquam aspernatur consequatur nisi possimus, iusto animi
+            fugiat alias? Possimus maiores repellendus dolor delectus incidunt
+            porro voluptas obcaecati rerum blanditiis quae, explicabo nesciunt
+            nihil voluptatibus natus expedita architecto fuga. Aspernatur,
+            quaerat?
+          </p>
+          <a href="#">More Information</a>
+          <div class="colors">
+            <div class="black"></div>
+            <div class="blue"></div>
+            <div class="red"></div>
+            <div class="yellow"></div>
+            <div class="green"></div>
+            <div class="brown"></div>
+          </div>
+        </div>
+        <div class="box">
+          <h3>Product Details</h3>
+          <ul>
+            <li>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Laboriosam, ipsa?
+            </li>
+            <li>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Laboriosam, ipsa?
+            </li>
+            <li>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Laboriosam, ipsa?
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button>Add to cart</button>
     </div>
-    <section class="cards">
-      <div class="card color-setting">
-        <h2 class="card-title">Fun stuff</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-          culpa tempore molestias.
-        </p>
+    <!-- <section class="product-container">
+      <h2>Converse Chuck Taylor all star Low Top</h2>
+      <div class="product-info-container">
+        <div class="shoe-img">
+          <img
+            class="shoe-image"
+            src="https://www.si.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_xy_center%2Cq_auto:good%2Cw_1200%2Cx_776%2Cy_755/MTk0Njk2MDgyNjkxNzI4NTQ2/ja-morant-shoe.jpg"
+            alt="shoe image"
+            height="250"
+            width="250"
+          />
+        </div>
+        <div class="product-description">
+          <div class="product-price">
+            <h3>$65.00</h3>
+            <p class="shipping-para">Free shipping</p>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+            incidunt repellendus facere repellat assumenda eum mollitia culpa at
+            maiores numquam aspernatur consequatur nisi possimus, iusto animi
+            fugiat alias? Possimus maiores repellendus dolor delectus incidunt
+            porro voluptas obcaecati rerum blanditiis quae, explicabo nesciunt
+            nihil voluptatibus natus expedita architecto fuga. Aspernatur,
+            quaerat?
+          </p>
+          <a href="#">More Information</a>
+          <div class="black"></div>
+          <div class="blue"></div>
+          <div class="red"></div>
+          <div class="yellow"></div>
+          <div class="green"></div>
+          <div class="brown"></div>
+        </div>
+        <div class="product-details">
+          <h3>Product Details</h3>
+          <ul>
+            <li>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Laboriosam, ipsa?
+            </li>
+            <li>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Laboriosam, ipsa?
+            </li>
+            <li>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Laboriosam, ipsa?
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="card card-containing-image">
-        <img
-          src="https://images.unsplash.com/photo-1629387280946-94c24eb0f6ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyOTgyOTg3Nw&ixlib=rb-1.2.1&q=80&w=400"
-          alt="a person posing in front of a round red door"
-        />
-        <h2 class="card-title">Fun stuff</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-          culpa tempore molestias.
-        </p>
-      </div>
-      <div class="card gradient-shadow">
-        <h2 class="card-title">Fun stuff</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-          culpa tempore molestias.
-        </p>
-      </div>
-    </section>
+      <button class="cart-btn">Add to cart</button>
+    </section> -->
   </body>
 </html>
