@@ -1,3 +1,3 @@
-# Before and after
+# JS DOM manipulation
 
 ##
