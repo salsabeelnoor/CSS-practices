@@ -1,83 +1,215 @@
-:root{
-    --page-1-color: steelblue;
-    --page-2-color: tan;
-    --page-3-color: teal;
-    --page-4-color: slateblue;
-    --animate-speed: 2s
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-body, html{
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.4;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+body {
+  font-family: "Poppins", sans-serif;
 }
-/* Page colors */
-#page-1{
-    background: var(--page-1-color);
+
+.container {
+  max-width: 70rem;
+  padding: 0.5rem 2rem;
+  margin: 0 auto;
 }
-#page-2{
-    background: var(--page-2-color);
+
+header {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
-#page-3{
-    background: var(--page-3-color);
+
+header::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 25;
 }
-#page-4{
-    background: var(--page-4-color);
+
+.mountain1 {
+  position: absolute;
+  bottom: -20px;
+  width: 1500px; /*1520*/
+  right: 0;
+  z-index: 19;
 }
-.page{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 4rem;
+.person {
+  position: absolute;
+  width: 850px;
+  bottom: -100px; /*-70px*/
+  left: -70px;
+  z-index: 20;
 }
-.page h1{
-    font-size: 4rem;
-    line-height: 1.2;
-    margin: 1rem;
+.mountain2 {
+  position: absolute;
+  width: 1500px; /*1100*/
+  bottom: -200px; /*100*/
+  left: 0;
+  z-index: 18;
 }
-.page p{
-    font-size: 1.3rem;
+.mountain3 {
+  position: absolute;
+  width: 1200px; /*900*/
+  bottom: 90px; /*150*/
+  right: 0;
+  z-index: 17;
 }
-.btn{
-    display: inline-block;
-    padding: 1rem 2rem;
-    background: #f4f4f4;
-    color: #333;
-    text-decoration: none;
-    border: none;
-    margin-top: 1rem;
-    font-size: 1.1rem;
-    transition: all 0.3s ease-in;
+.sky {
+  position: absolute;
+  width: 2200px;
+  top: 0;
+  bottom: 50px; /*changed*/
+  right: 0;
 }
-.btn:hover, .btn-dark{
-    background: #333;
-    color: #fff;
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 0;
+  z-index: 30;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
 }
-.btn-dark:hover{
-    background: #f4f4f4;
-    color: #333;
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-/* Page animation */
-#page-1 h1{
-    transform: translateY(-1200px);
-    animation: heading var(--animate-speed) forwards ease-in;
+
+.logo {
+  color: #fff;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
 }
-#page-1 p{
-    transform: translateX(-1800px);
-    animation: heading var(--animate-speed) forwards ease-in 1s;
+.logo span {
+  font-weight: 300;
 }
-@keyframes heading{
-    to{
-        transform: translateY(0);
-    }
+.hamburger-menu {
+  width: 1.55rem;
+  height: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
-@keyframes p{
-    to{
-        transform: translateYX(0);
-    }
+.bar {
+  position: relative;
+  width: 1.2rem;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+.bar::before,
+.bar::after {
+  content: "";
+  position: absolute;
+  width: 1.55rem;
+  height: 3px;
+  right: 0;
+  background-color: #fff;
+  border-radius: 2px;
+}
+.bar::before {
+  transform: translateY(-8px);
+}
+.bar::after {
+  transform: translateY(8px);
+}
+.big-title {
+  position: absolute;
+  z-index: 30;
+  line-height: 4rem;
+  top: calc(50% - 2rem);
+  width: 100%;
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+section {
+  width: 100%;
+  background-color: #151515;
+  position: relative;
+}
+
+section .container {
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+section img {
+  width: 100%;
+}
+
+section .container > * {
+  margin: 2rem;
+}
+
+.content {
+  color: #fff;
+  transform: translateY(-50px);
+}
+
+.title {
+  position: relative;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+}
+.border {
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  background-color: #fff;
+  bottom: 0;
+  left: 0;
+}
+.shadow {
+  position: absolute;
+  bottom: 100%;
+  height: 300px;
+  width: 100%;
+  left: 0;
+  z-index: 20;
+  background: linear-gradient(to top, #000000, transparent);
+}
+.imgContainer {
+  transform: translateY(50px);
+}
+.opacity {
+  opacity: 0;
+}
+
+@media (max-width: 850px) {
+  section .container {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .big-title {
+    font-size: 3rem;
+  }
+
+  .text {
+    font-size: 0.8rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
 }
