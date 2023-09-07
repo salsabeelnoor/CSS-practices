@@ -34,15 +34,15 @@ header::after {
 
 .mountain1 {
   position: absolute;
-  bottom: -20px;
-  width: 1500px; /*1520*/
+  bottom: -150px;
+  width: 2000px; /*1520*/
   right: 0;
   z-index: 19;
 }
 .person {
   position: absolute;
   width: 850px;
-  bottom: -100px; /*-70px*/
+  bottom: -150px; /*-70px*/
   left: -70px;
   z-index: 20;
 }
