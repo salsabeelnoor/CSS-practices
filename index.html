@@ -1,76 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <title>Presentation</title>
 </head>
-<body>
-    <!-- page-1 -->
-    <section id="page-1" class="page">
-        <h1>Welcome to My Presentation</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum amet porro 
-            reiciendis aperiam eveniet repellat, possimus cumque facilis ipsum nobis quod tempora consequuntur impedit 
-            blanditiis unde animi magni eaque 
-            repudiandae, modi atque quo ab aliquam. Ut nostrum illo laboriosam qui?</p>
-            <div class="">
-                <a href="#page-2" class="btn btn-dark">Next Page <i class="fas fa-arrow-circle-down"></i> </a>
-            </div>
-    </section>
 
-    <!-- page-2 -->
-    <section id="page-2" class="page">
-        <h1>Page - 2</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum amet porro 
-            reiciendis aperiam eveniet repellat, possimus cumque facilis ipsum nobis quod tempora consequuntur impedit 
-            blanditiis unde animi magni eaque 
-            repudiandae, modi atque quo ab aliquam. Ut nostrum illo laboriosam qui?</p>
-            <div class="">
-                <a href="#page-1" class="btn btn-dark">Next Page <i class="fas fa-arrow-circle-up"></i> </a>
-                <a href="#page-3" class="btn">Next Page <i class="fas fa-arrow-circle-down"></i> </a>
-            </div>
-    </section>
-    <!-- page-3 -->
-    <section id="page-3" class="page">
-        <h1>Page - 3</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum amet porro 
-            reiciendis aperiam eveniet repellat, possimus cumque facilis ipsum nobis quod tempora consequuntur impedit 
-            blanditiis unde animi magni eaque 
-            repudiandae, modi atque quo ab aliquam. Ut nostrum illo laboriosam qui?</p>
-            <div class="">
-                <a href="#page-2" class="btn btn-dark">Next Page <i class="fas fa-arrow-circle-up"></i> </a>
-                <a href="#page-4" class="btn">Next Page <i class="fas fa-arrow-circle-down"></i> </a>
-            </div>
-    </section>
-    <!-- page-4 -->
-    <section id="page-4" class="page">
-        <h1>Page - 4</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum amet porro 
-            reiciendis aperiam eveniet repellat, possimus cumque facilis ipsum nobis quod tempora consequuntur impedit 
-            blanditiis unde animi magni eaque 
-            repudiandae, modi atque quo ab aliquam. Ut nostrum illo laboriosam qui?</p>
-            <div class="">
-                <a href="#page-3" class="btn">Next Page <i class="fas fa-arrow-circle-up"></i> </a>
-            </div>
-    </section>
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" 
-    crossorigin="anonymous"></script>
-    <script>
-        // Smooth Scrolling
-        $('.btn').on('click', function(event) {
-            if (this.hash !== '') {
-              event.preventDefault();
-              const hash = this.hash;
-              $('html, body').animate(
-                {
-                  scrollTop: $(hash).offset().top
-                },
-                800
-              );
-            }
-          });
-      </script>
+<body>
+    <!-- <div class="talk-bubble">
+        <div class="talktext">
+            <p>CSS Talk Bubble configured by classes. Defaults to square shape, no triangle. Height is auto-adjusting to
+                the height of the text.</p>
+        </div>
+    </div>
+    <div class="talk-bubble tri-right left-top">
+        <div class="talktext">
+            <p>This one adds a right triangle on the left, flush at the top by using .tri-right and .left-top to specify
+                the location.</p>
+        </div>
+    </div>
+    <div class="talk-bubble tri-right left-in">
+        <div class="talktext">
+            <p>This talk-bubble uses .left-in class to show a triangle on the left slightly indented. Still a blocky
+                square.</p>
+        </div>
+    </div>
+    <div class="talk-bubble tri-right round btm-left">
+        <div class="talktext">
+            <p>And now using .round we can smooth the sides down. Also uses .btm-left to show a triangle at the bottom
+                flush to the left.</p>
+        </div>
+    </div> -->
+    <div class="talk-bubble tri-right border round btm-left-in">
+        <div class="talktext">
+            <p>Now we add a border and it looks like a comic. Uses .border .round and .btm-left-in</p>
+        </div>
+    </div>
+    <!-- <div class="talk-bubble tri-right border btm-right-in">
+        <div class="talktext">
+            <p>Now flipped the other way and square. Uses .border and .btm-right-in</p>
+        </div>
+    </div>
+    <div class="talk-bubble tri-right btm-right">
+        <div class="talktext">
+            <p>Flush to the bottom right. Uses .btm-right only.</p>
+        </div>
+    </div>
+    <div class="talk-bubble tri-right round right-in">
+        <div class="talktext">
+            <p>Moving our way back up the right side indented. Uses .round and .right-in</p>
+        </div>
+    </div>
+    <div class="talk-bubble tri-right round border right-top">
+        <div class="talktext">
+            <p>And finally on the right flush at the top. Uses .round .border and .right-top</p>
+        </div>
+    </div> -->
 </body>
+
 </html>
